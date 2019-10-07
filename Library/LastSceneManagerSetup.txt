@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Assets/Scene/GameOfLife.unity
+- path: Assets/Scene/GameOfLife.unity
   isLoaded: 1
   isActive: 1
