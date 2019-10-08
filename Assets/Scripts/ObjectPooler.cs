@@ -7,14 +7,16 @@ using System.Collections.Generic;
 public class ObjectPoolItem
 {
 	public GameObject objectToPool;
+
 	public int amountToPool;
-	public bool shouldExpand;
 }
 
 public class ObjectPooler : MonoBehaviour
 {
 	public static ObjectPooler SharedInstance;
+
 	public List<ObjectPoolItem> itemsToPool;
+
 	public List<GameObject> pooledObjects;
 
 	void Awake ()
@@ -25,39 +27,35 @@ public class ObjectPooler : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		// List for the objects
 		pooledObjects = new List<GameObject> ();
-		foreach (ObjectPoolItem item in itemsToPool) {
-			for (int i = 0; i < item.amountToPool; i++) {
+
+		foreach (ObjectPoolItem item in itemsToPool) 
+		{
+			//Th required amount of objects are created here
+			for (int i = 0; i < item.amountToPool; i++) 
+			{
 				GameObject obj = (GameObject)Instantiate (item.objectToPool);
+
+				//Default keeping the false
 				obj.SetActive (false);
+
+				//Adding all the objects in the list
 				pooledObjects.Add (obj);
 			}
 		}
 	}
 
-	public GameObject GetPooledObject (string tag)
-	{
-		for (int i = 0; i < pooledObjects.Count; i++) {
-			if (!pooledObjects [i].activeInHierarchy && pooledObjects [i].tag == tag) {
-				return pooledObjects [i];
-			}
-		}
-		foreach (ObjectPoolItem item in itemsToPool) {
-			if (item.objectToPool.tag == tag) {
-				if (item.shouldExpand) {
-					GameObject obj = (GameObject)Instantiate (item.objectToPool);
-					obj.SetActive (false);
-					pooledObjects.Add (obj);
-					return obj;
-				}
-			}
-		}
-		return null;
-	}
 
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
+//	public GameObject GetPooledObject (string tag)
+//	{
+//		for (int i = 0; i < pooledObjects.Count; i++) 
+//		{
+//			if (!pooledObjects [i].activeInHierarchy && pooledObjects [i].tag == tag)
+//			{
+//				return pooledObjects [i];
+//			}
+//		}
+//		return null;
+//	}
 }

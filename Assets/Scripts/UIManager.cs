@@ -9,6 +9,11 @@ public class UIManager : MonoBehaviour
 	public GameObject PlayButton;
 	public GameObject StopButton;
 	public GameObject StepButton;
+	public GameObject homePanel;
+
+	[Header("Button")]
+	public Button enterButton;
+	public Button backButton;
 
 	public GameObject MoreSizeButton;
 	public GameObject LessSizeButton;
@@ -17,15 +22,44 @@ public class UIManager : MonoBehaviour
 	public Slider timeSlider;
 
     [Header("Text")]
-    public Text mapSizeText;
     public Text updateIntervalText;
 
-    void Start()
+	private void Start()
     {
+		enterButton.onClick.RemoveAllListeners ();
+		enterButton.onClick.AddListener (() => 
+			{
+					EnterButtonAction();
+			});
+
+		backButton.onClick.RemoveAllListeners ();
+		backButton.onClick.AddListener (() => 
+				{
+					BackButtonAction();
+				});
+
 		updateIntervalText.text = "Time Step: " + Mathf.Round(GameManager.Instance().updateInterval * 1000.0f) + "ms";
     }
 
-    public void StartSim ()
+
+	//Enter button in Home screen
+	void EnterButtonAction()
+	{
+		//Leadt to start the game
+		ClearGrid();
+		homePanel.SetActive (false);
+	}
+
+	//Back to Menu panel
+	void BackButtonAction()
+	{
+		homePanel.SetActive (true);
+		ClearGrid();
+
+	}
+
+	//Starts the timing here
+    public void StartButtonAction ()
 	{
 		GameManager.Instance().Run ();
 
@@ -34,7 +68,8 @@ public class UIManager : MonoBehaviour
 		StepButton.SetActive (false);
 	}
 
-	public void StopSim ()
+	//Stops the generation here
+	public void StopButtonAction ()
 	{
 		GameManager.Instance().Stop ();
 
@@ -43,19 +78,24 @@ public class UIManager : MonoBehaviour
 		StepButton.SetActive (true);
 	}
 
-	public void NextStep()
+
+	//It redirects to next generation
+	public void NextStepButtonAction()
 	{
+		SoundManager.Instance ().playSound (SoundManager.SOUND_ID.CLICK);
+
 		GameManager.Instance().UpdateCells();
 	}
 
-    // Clear map now automatically stops the simulation.
-	public void ClearMap ()
+    // Clear map now automatically stops the game.
+	public void ClearGrid ()
 	{
-        StopSim();
+        StopButtonAction();
 		GameManager.Instance().ResetCells ();
 	}
 
 
+	//Changing the interval time for go to next generation
 	public void ChangeUpdateInterval (Slider slider)
 	{
 		GameManager.Instance().updateInterval = slider.value;

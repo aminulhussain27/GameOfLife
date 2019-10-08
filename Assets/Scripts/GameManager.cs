@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    public CellScript cellPrefab;
+    public Cell cellPrefab;
 
 	public float updateInterval = 0.1f;
     float counter;
 
     // Declaring a matrix for cells, allows neighbour checking!
-    public CellScript[,] cells;
+    public Cell[,] cells;
 
 	public bool isPlaying = false;
 
@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
 	void Start ()
 	{
 		InitGrid ();
+
+		SoundManager.Instance ().playSound (SoundManager.SOUND_ID.LOOP_BACKGROUND, 1, true);
     }
 
 	void Update ()
@@ -80,11 +82,13 @@ public class GameManager : MonoBehaviour
 		{
 			for (int j = 0; j < 6; j++)
 			{
-                SpawnPoolManager.instance.Despawn (cells [i, j].gameObject);
+                PoolManager.instance.Despawn (cells [i, j].gameObject);
 			}
 		}
 	}
 
+
+	//Initializing the map or Grid(I kept fixed size 6x6 as per the assignment)
 	public void InitGrid ()
 	{
 		generation = 0;
@@ -92,7 +96,7 @@ public class GameManager : MonoBehaviour
 		genText.text = generation.ToString("000");
 
 		//Create cells
-		cells = new CellScript[6, 6];
+		cells = new Cell[6, 6];
 
 		for (int i = 0; i < 6; i++)// 6cell size in X direction
 		{
@@ -100,7 +104,7 @@ public class GameManager : MonoBehaviour
 			{
 				// Creating a cell into the scene.
 
-				CellScript c = SpawnPoolManager.instance.Spawn ("CellSprite", new Vector3 (i * 4.5f, j * 4.5f, 0.0f), Quaternion.identity);
+				Cell c = PoolManager.instance.Spawn ("CellSprite", new Vector3 (i * 4.5f, j * 4.5f, 0.0f), Quaternion.identity);
 
 				c.InitCell (i, j);
 

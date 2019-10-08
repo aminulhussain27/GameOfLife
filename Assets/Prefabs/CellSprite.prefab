@@ -83,8 +83,8 @@ MonoBehaviour:
   state: 0
   nextState: 0
   sRender: {fileID: 0}
-  aliveColour: {r: 0, g: 1, b: 0, a: 1}
-  deadColour: {r: 0.050821807, g: 0.32021233, b: 0.6911765, a: 1}
+  aliveColour: {r: 0, g: 0.8156863, b: 0, a: 1}
+  deadColour: {r: 0.77254903, g: 0.12941177, b: 0.12941177, a: 1}
 --- !u!212 &212924828180339606
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -118,9 +118,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c08774bc4b0854047a4a4de20c443fed, type: 3}
-  m_Color: {r: 0.050980393, g: 0.32156864, b: 0.6901961, a: 1}
+  m_Color: {r: 0.77254903, g: 0.12941177, b: 0.12941177, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

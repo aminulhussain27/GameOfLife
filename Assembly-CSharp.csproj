@@ -51,10 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CellScript.cs" />
+     <Compile Include="Assets\Scripts\Cell.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\ObjectPooler.cs" />
-     <Compile Include="Assets\Scripts\SpawnPoolManager.cs" />
+     <Compile Include="Assets\Scripts\PoolManager.cs" />
+     <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>

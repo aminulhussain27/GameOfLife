@@ -94,15 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517508b4a182fd0449b6153510bb98d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aliveMaterial: {fileID: 2100000, guid: 9dbb86f7ad6c83f449caf87822d64001, type: 2}
-  deadMaterial: {fileID: 2100000, guid: ce3fa03b1a53cc940bede4cc82c3494a, type: 2}
-  gameOfLife: {fileID: 0}
   x: 0
   y: 0
-  neighbour: []
   state: 0
   nextState: 0
-  mRender: {fileID: 0}
   sRender: {fileID: 0}
-  aliveColour: {r: 0, g: 0, b: 0, a: 0}
-  deadColour: {r: 0, g: 0, b: 0, a: 0}
+  aliveColour: {r: 0, g: 0.8156863, b: 0, a: 1}
+  deadColour: {r: 0.77254903, g: 0.12941177, b: 0.12941177, a: 1}
