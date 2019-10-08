@@ -45,17 +45,4 @@ public class ObjectPooler : MonoBehaviour
 			}
 		}
 	}
-
-
-//	public GameObject GetPooledObject (string tag)
-//	{
-//		for (int i = 0; i < pooledObjects.Count; i++) 
-//		{
-//			if (!pooledObjects [i].activeInHierarchy && pooledObjects [i].tag == tag)
-//			{
-//				return pooledObjects [i];
-//			}
-//		}
-//		return null;
-//	}
 }

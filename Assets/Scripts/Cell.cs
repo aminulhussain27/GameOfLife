@@ -122,10 +122,5 @@ public class Cell : MonoBehaviour
 			state = CellState.Alive;
 			UpdateMaterial ();
 		} 
-//		else if (Input.GetButton ("Fire2")) 
-//		{
-//			state = CellState.Dead;
-//			UpdateMaterial ();
-//		}
 	}
 }

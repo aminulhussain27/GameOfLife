@@ -15,9 +15,6 @@ public class UIManager : MonoBehaviour
 	public Button enterButton;
 	public Button backButton;
 
-	public GameObject MoreSizeButton;
-	public GameObject LessSizeButton;
-
 	[Header ("Slider")]
 	public Slider timeSlider;
 

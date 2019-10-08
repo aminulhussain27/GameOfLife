@@ -1,11 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PoolManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\UIManager.cs" Line="27" Column="26" />
-      <File FileName="Assets\Scripts\PoolManager.cs" Line="67" Column="4" />
-      <File FileName="Assets\Scripts\ObjectPooler.cs" Line="55" Column="4" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="107" Column="38" />
+      <File FileName="Assets\Scripts\ObjectPooler.cs" Line="50" Column="3" />
+      <File FileName="Assets\Scripts\PoolManager.cs" Line="64" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

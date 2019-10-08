@@ -24,8 +24,6 @@ public class PoolManager : MonoBehaviour
 		{
 			Destroy (gameObject);
 		}
-			
-//		DontDestroyOnLoad (this.gameObject);
 
 		InitializePoolManager ();
 	}
@@ -78,8 +76,7 @@ public class PoolManager : MonoBehaviour
 		} 
 		return null;
 	}
-
-	// Despawn.
+		
 	public void Despawn (GameObject objectToDespawn)
 	{
 		objectToDespawn.SetActive (false);
