@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 			{
 				// Creating a cell into the scene.
 
-				Cell c = PoolManager.instance.Spawn ("CellSprite", new Vector3 (i * 4.5f, j * 4.5f, 0.0f), Quaternion.identity);
+				Cell c = PoolManager.instance.Spawn ("Cell", new Vector3 (i * 4.5f, j * 4.5f, 0.0f), Quaternion.identity);
 
 				c.InitCell (i, j);
 
